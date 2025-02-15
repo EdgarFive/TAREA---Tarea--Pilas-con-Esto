@@ -11,7 +11,7 @@ class UndoManager {
     }
     
     //Agrega una acción a la pila ====
-    addaction(action){
+    addAction(action){
         this.actions.push(action);
     }
 
@@ -25,7 +25,7 @@ class UndoManager {
     }
 
     //Retornamos historial de acciones ===
-    gethistorial(){
+    getHistory(){
         return [... this.actions];
     }
 }
@@ -38,11 +38,11 @@ class UndoManager {
 const manager = new UndoManager();
 
 //Agregamos acciones ===
-manager.addaction("Escribir 'Hola'");
-manager.addaction("Escribir 'Mundo'");
+manager.addAction("Escribir 'Hola'");
+manager.addAction("Escribir 'Mundo'");
 
 //Imprimimos las acciones ===
-console.log(manager.gethistorial());
+console.log(manager.getHistory());
 
 console.log("DESHACER");
 
@@ -50,5 +50,5 @@ console.log("DESHACER");
 manager.undo();
 
 //Imprimimos las acciones ===
-console.log(manager.gethistorial());
+console.log(manager.getHistory());
 
